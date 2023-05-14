@@ -6,7 +6,7 @@ class TestCurriculum(unittest.TestCase):
     def setUp(self): 
         self.curriculum = Curriculum()
         # reqcourses_num, program_code, credits=120
-        self.curriculum.set_guidance(reqcourses_num=5, program_code="CS001", credits=120)
+        self.curriculum.set_guidance(reqcourses_num=5, program_code="CS002", credits=120)
         # faculty_id, faculty_member_id
         self.curriculum.set_faculty(faculty_id=1, faculty_member_id=1)
 
@@ -14,7 +14,7 @@ class TestCurriculum(unittest.TestCase):
         self.assertEqual(self.curriculum.get_reqcourses_num(), 5)
 
     def test_get_guidance(self):
-        self.assertEqual(self.curriculum.get_guidance(), (5, "CS001", 120))
+        self.assertEqual(self.curriculum.get_guidance(), (5, "CS002", 120))
     
     def test_check_curriculum(self):
         cources_to_add = ['Cybersecurity Fundamentals', 'Discrete Mathematics', 'Probability and Statistics',
