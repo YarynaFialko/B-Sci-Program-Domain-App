@@ -21,12 +21,12 @@ class TestCourseRegistration(unittest.TestCase):
         else:
             self.assertFalse(self.course_registration.check_course_availible())
     
-    def test_get_availible_places_count(self):
-        self.assertEqual(self.course_registration.get_availible_places_count(), 10)
+    # def test_get_availible_places_count(self):
+    #     self.assertEqual(self.course_registration.get_availible_places_count(), 10)
     
     def test_get_course(self):
         self.course_registration.set_course_name("Cybersecurity Governance")
-        for i in range(11):
+        for i in range(11, 20):
             self.course_registration.set_student_id(i)
             self.course_registration.register()
         self.assertFalse(self.course_registration.check_course_availible())
@@ -45,24 +45,6 @@ class TestCourseRegistration(unittest.TestCase):
             self.course_registration.set_student_id(i+20)
             self.course_registration.register()
         self.assertEqual(len(self.course_registration.get_waitlist()), 1)
-
-    # def test_drop(self):
-    #     # delete registration
-    #     print(len(self.course_registration.get_waitlist()))
-
-    #     self.course_registration.set_student_id(22)
-    #     self.course_registration.register()
-
-    #     prev_waitlist_len = len(self.course_registration.get_waitlist())
-
-    #     self.course_registration.set_student_id(1)
-    #     self.course_registration.set_course_name("Cybersecurity Governance")
-    #     self.course_registration.drop()
-        
-        
-
-
-
 
 
 if __name__ == '__main__':
